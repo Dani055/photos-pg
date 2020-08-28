@@ -1,37 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-declare var FB:any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  clientId = '366c60c2bacabe3';
-  clientSecret = '6d4d947c9e7b54dba5c26c1d9a1b5e55904a40e0';
-  albumHash = 'xAmFVtT';
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Authorization': 'Client-ID ' + this.clientId,
-      'Content-Type': 'application/json'
-    })
-  };
-  photos;
+export class AppComponent{
 
-  constructor(private http: HttpClient){}
-  ngOnInit(){
-    this.http.get('https://api.imgur.com/3/album/' + this.albumHash + '/images', this.httpOptions).subscribe((res) => {
-      console.log(res)
-      let photos_eval = res['data'];
-      for(let img of photos_eval){
-        console.log(img);
-        if(img.width > img.height){
-          img.ar = 'landscape';
-        }
-      }
-      this.photos = photos_eval;
-    })
-  }
+  constructor(){}
 
 }
