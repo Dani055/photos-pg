@@ -1,0 +1,12 @@
+.media img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.media{
+    width: 20%;
+    margin-top: 2em;
+}
+.media.landscape{
+    width: 27%;
+}

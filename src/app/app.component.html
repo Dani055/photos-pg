@@ -1,0 +1,6 @@
+<div *ngFor="let img of photos" [ngClass]="{'landscape': img.ar === 'landscape'}" class="media">
+    <img src="{{img.link}}" alt="">
+</div>
+
+
+<router-outlet></router-outlet>
